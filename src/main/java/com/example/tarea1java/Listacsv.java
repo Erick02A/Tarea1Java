@@ -10,7 +10,11 @@ public class Listacsv {
     private String nombreCSVEscribir;
     public ArrayList<Estudiante> estudiantes;
 
-    public Listacsv(String nombreCSVLeer,String nombreCSVEscribir,ArrayList<Estudiante> estudiantes) {
+    public ArrayList<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+
+    public Listacsv(String nombreCSVLeer, String nombreCSVEscribir, ArrayList<Estudiante> estudiantes) {
         this.nombreCSVLeer = nombreCSVLeer;
         this.nombreCSVEscribir = nombreCSVEscribir;
         if(estudiantes == null) {
@@ -18,12 +22,6 @@ public class Listacsv {
         }
         else {
             this.estudiantes = estudiantes;
-        }
-    }
-    public void Mostrar(){
-        for (Estudiante e: estudiantes) {
-            System.out.println(e.NotaPromExQuiTa);
-            System.out.println(e.NotaPromPro);
         }
     }
     public void leerFichero(){
