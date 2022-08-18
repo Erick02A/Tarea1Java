@@ -24,6 +24,11 @@ public class Listacsv {
             this.estudiantes = estudiantes;
         }
     }
+    public void mostrar() {
+        for (Estudiante e : estudiantes) {
+        System.out.println(e.NotaPromPro+" | "+e.NotaPromExQuiTa);
+        }
+    }
     public void leerFichero(){
         FileReader fr;
         try {
