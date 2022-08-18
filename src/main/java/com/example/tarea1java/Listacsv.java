@@ -1,7 +1,6 @@
 package com.example.tarea1java;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,7 +8,7 @@ import java.util.ArrayList;
 public class Listacsv {
     private String nombreCSVLeer;
     private String nombreCSVEscribir;
-    private ArrayList<Estudiante> estudiantes;
+    public ArrayList<Estudiante> estudiantes;
 
     public Listacsv(String nombreCSVLeer,String nombreCSVEscribir,ArrayList<Estudiante> estudiantes) {
         this.nombreCSVLeer = nombreCSVLeer;
@@ -21,9 +20,10 @@ public class Listacsv {
             this.estudiantes = estudiantes;
         }
     }
-    public void mostrar(){
-        for(Estudiante e: this.estudiantes){
-            System.out.println(e.getNotaPromExQuiTa());
+    public void Mostrar(){
+        for (Estudiante e: estudiantes) {
+            System.out.println(e.NotaPromExQuiTa);
+            System.out.println(e.NotaPromPro);
         }
     }
     public void leerFichero(){
@@ -40,21 +40,19 @@ public class Listacsv {
                 String Telefono = datos[3];
                 String Nickname = datos[4];
                 String TipoEst = datos[5];
-                double NotaPromEx = Double.parseDouble(datos[6]);
-                double NotaPromQui = Double.parseDouble(datos[7]);
-                double NotaPromTa = Double.parseDouble(datos[8]);
-                double NotaPro1 = Double.parseDouble(datos[9]);
-                double NotaPro2 = Double.parseDouble(datos[10]);
-                double NotaProm3 = Double.parseDouble(datos[11]);
+                String NotaPromEx = datos[6];
+                String NotaPromQui = datos[7];
+                String NotaPromTa = datos[8];
+                String NotaPro1 = datos[9];
+                String NotaPro2 = datos[10];
+                String NotaProm3 = datos[11];
                 double NotaPromPro = 0.0;
                 double NotaPromExQuiTa = 0.0;
-
-                if (datos[5].equals("A")){
-                    Estudiante e = new EstudianteA(carne, NomApe, correo, Telefono, Nickname, TipoEst, NotaPromEx, NotaPromQui, NotaPromTa, NotaPro1, NotaPro2, NotaProm3, NotaPromPro, NotaPromExQuiTa);
+                if (datos[5].equals("A")) {
+                    Estudiante e = new EstudianteA(carne, NomApe, correo, Telefono, Nickname, TipoEst, Double.parseDouble(NotaPromEx), Double.parseDouble(NotaPromQui), Double.parseDouble(NotaPromTa), Double.parseDouble(NotaPro1), Double.parseDouble(NotaPro2), Double.parseDouble(NotaProm3), NotaPromPro, NotaPromExQuiTa);
                     this.estudiantes.add(e);
-                }
-                else{
-                    Estudiante e = new EstudianteB(carne, NomApe, correo, Telefono, Nickname, TipoEst, NotaPromEx, NotaPromQui, NotaPromTa, NotaPro1, NotaPro2, NotaProm3, NotaPromPro, NotaPromExQuiTa);
+                } else if (datos[5].equals("B")) {
+                    Estudiante e = new EstudianteB(carne, NomApe, correo, Telefono, Nickname, TipoEst, Double.parseDouble(NotaPromEx), Double.parseDouble(NotaPromQui), Double.parseDouble(NotaPromTa), Double.parseDouble(NotaPro1), Double.parseDouble(NotaPro2), Double.parseDouble(NotaProm3), NotaPromPro, NotaPromExQuiTa);
                     this.estudiantes.add(e);
                 }
             }
@@ -63,4 +61,5 @@ public class Listacsv {
         }
 
     }
+
 }
