@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
@@ -12,8 +13,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class HelloApplication extends Application {
     @FXML
@@ -47,7 +50,7 @@ public class HelloApplication extends Application {
     @FXML
     private TableView<Estudiante> tv_E;
     @Override
-    public void start(Stage primarystage){
+    public void start(Stage stage) throws Exception{
         String nombreCSVLeer = "C:\\Users\\Erick\\Desktop\\Datos I\\Tarea 1\\Tarea1Java\\src\\main\\java\\com\\example\\tarea1java\\Students.csv";
         String nombreCSVEscribir = "C:\\Users\\Erick\\Desktop\\Datos I\\Tarea 1\\Tarea1Java\\src\\main\\java\\com\\example\\tarea1java\\Students.csv";
         ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
@@ -55,8 +58,7 @@ public class HelloApplication extends Application {
         listacsv.leerFichero();
         System.out.println(listacsv.getEstudiantes());
         listacsv.mostrar();
-        try {
-            Scene scene = new Sce;
+        
             carne.setCellValueFactory(new PropertyValueFactory<>("carne"));
             NomApe.setCellValueFactory(new PropertyValueFactory<>("NomApe"));
             correo.setCellValueFactory(new PropertyValueFactory<>("correo"));
@@ -74,11 +76,6 @@ public class HelloApplication extends Application {
 
             ObservableList<Estudiante> e = FXCollections.observableArrayList(listacsv.getEstudiantes());
             tv_E.getItems().setAll(e);
-            primarystage.setTitle("Lista Notas Estudiantes");
-            primarystage.setScene(scene);
-            primarystage.show();
-        }catch (Exception e){
-            System.out.println("Error: "+e.getMessage());
         }
     }
 }
