@@ -58,7 +58,9 @@ public class HelloApplication extends Application {
         listacsv.leerFichero();
         System.out.println(listacsv.getEstudiantes());
         listacsv.mostrar();
-        
+
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
             carne.setCellValueFactory(new PropertyValueFactory<>("carne"));
             NomApe.setCellValueFactory(new PropertyValueFactory<>("NomApe"));
             correo.setCellValueFactory(new PropertyValueFactory<>("correo"));
@@ -76,6 +78,9 @@ public class HelloApplication extends Application {
 
             ObservableList<Estudiante> e = FXCollections.observableArrayList(listacsv.getEstudiantes());
             tv_E.getItems().setAll(e);
-        }
+        stage.setTitle("Hello");
+        stage.setScene(scene);
+        stage.show();
+
     }
 }
