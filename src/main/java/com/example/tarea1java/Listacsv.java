@@ -8,9 +8,9 @@ import java.util.ArrayList;
 public class Listacsv {
     private String nombreCSVLeer;
     private String nombreCSVEscribir;
-    public ArrayList<Estudiante> estudiantes;
+    public static ArrayList<Estudiante> estudiantes;
 
-    public ArrayList<Estudiante> getEstudiantes() {
+    public static ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
     }
 
@@ -26,7 +26,7 @@ public class Listacsv {
     }
     public void mostrar() {
         for (Estudiante e : estudiantes) {
-        System.out.println(e.NotaPromPro+" | "+e.NotaPromExQuiTa);
+        System.out.println(e.carne+" | "+e.NomApe+" | "+e.correo+" | "+e.Telefono+" | "+e.Nickname+" | "+e.TipoEst+" | "+e.NotaPromEx+" | "+e.NotaPromQui+" | "+e.NotaPromTa+" | "+e.NotaPro1+" | "+e.NotaPro2+" | "+e.NotaPro3+" | "+e.NotaPromPro+" | "+e.NotaPromExQuiTa);
         }
     }
     public void leerFichero(){
