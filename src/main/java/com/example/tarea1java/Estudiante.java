@@ -1,20 +1,20 @@
 package com.example.tarea1java;
 
 public abstract class Estudiante {
-    protected final String carne ;
-    protected final String NomApe;
-    protected final String correo;
-    protected final String Telefono;
-    protected final String Nickname;
-    protected final String TipoEst;
-    protected final double NotaPromEx;
-    protected final double NotaPromQui;
-    protected final double NotaPromTa;
-    protected final double NotaPro1;
-    protected final double NotaPro2;
-    protected final double NotaPro3;
-    protected double NotaPromPro;
-    protected double NotaPromExQuiTa;
+    private final String carne ;
+    private final String NomApe;
+    private final String correo;
+    private final String Telefono;
+    private final String Nickname;
+    private final String TipoEst;
+    private final double NotaPromEx;
+    private final double NotaPromQui;
+    private final double NotaPromTa;
+    private final double NotaPro1;
+    private final double NotaPro2;
+    private final double NotaPro3;
+    private double NotaPromPro;
+    private double NotaPromExQuiTa;
 
     public Estudiante(String carne, String NomApe, String correo, String Telefono, String Nickname, String TipoEst, double NotaPromEx, double NotaPromQui, double NotaPromTa, double NotaPro1, double NotaPro2, double NotaPro3, double NotaPromPro, double NotaPromExQuiTa){
         this.carne= carne;
@@ -59,6 +59,13 @@ public abstract class Estudiante {
     public double getNotaPromPro() {return NotaPromPro;}
     public double getNotaPromExQuiTa() {return NotaPromExQuiTa;}
 
+    public void setNotaPromPro(double notaPromPro) {
+        NotaPromPro = notaPromPro;
+    }
+
+    public void setNotaPromExQuiTa(double notaPromExQuiTa) {
+        NotaPromExQuiTa = notaPromExQuiTa;
+    }
 }
 
 

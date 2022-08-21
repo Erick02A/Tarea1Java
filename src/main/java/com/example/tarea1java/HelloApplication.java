@@ -27,8 +27,6 @@ public class HelloApplication extends Application {
         ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
         Listacsv listacsv = new Listacsv(nombreCSVLeer,nombreCSVEscribir,estudiantes);
         listacsv.leerFichero();
-        System.out.println(Listacsv.getEstudiantes());
-        listacsv.mostrar();
         Student = FXCollections.observableArrayList(Listacsv.getEstudiantes());
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 700, 240);

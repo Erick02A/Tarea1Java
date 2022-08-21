@@ -24,11 +24,7 @@ public class Listacsv {
             this.estudiantes = estudiantes;
         }
     }
-    public void mostrar() {
-        for (Estudiante e : estudiantes) {
-        System.out.println(e.carne+" | "+e.NomApe+" | "+e.correo+" | "+e.Telefono+" | "+e.Nickname+" | "+e.TipoEst+" | "+e.NotaPromEx+" | "+e.NotaPromQui+" | "+e.NotaPromTa+" | "+e.NotaPro1+" | "+e.NotaPro2+" | "+e.NotaPro3+" | "+e.NotaPromPro+" | "+e.NotaPromExQuiTa);
-        }
-    }
+
     public void leerFichero(){
         FileReader fr;
         try {

@@ -47,36 +47,20 @@ public class HelloController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Students = FXCollections.observableArrayList(Listacsv.getEstudiantes());
-        System.out.println(Students);
-        tv_E = new TableView<Estudiante>();
-        colcarne = new TableColumn<>();
-        colNomApe = new TableColumn<>();
-        colcorreo = new TableColumn<>();
-        colTelefono = new TableColumn<>();
-        colNickName = new TableColumn<>();
-        colTipoEst = new TableColumn<>();
-        colNotaPromEx = new TableColumn<>();
-        colNotaPromQui = new TableColumn<>();
-        colNotaPromTa = new TableColumn<>();
-        colNotaPro1 = new TableColumn<>();
-        colNotaPro2 = new TableColumn<>();
-        colNotaPro3 = new TableColumn<>();
-        colNotaPromPro = new TableColumn<>();
-        colNotaPromExQuiTa = new TableColumn<>();
-        colcarne.setCellValueFactory(new PropertyValueFactory<>("this.carne"));
-        colNomApe.setCellValueFactory(new PropertyValueFactory<>("this.NomApe"));
-        colcorreo.setCellValueFactory(new PropertyValueFactory<>("this.correo"));
-        colTelefono.setCellValueFactory(new PropertyValueFactory<>("this.Telefono"));
-        colNickName.setCellValueFactory(new PropertyValueFactory<>("this.Nickname"));
-        colTipoEst.setCellValueFactory(new PropertyValueFactory<>("this.TipoEst"));
-        colNotaPromEx.setCellValueFactory(new PropertyValueFactory<>("this.NotaPromEx"));
-        colNotaPromQui.setCellValueFactory(new PropertyValueFactory<>("this.NotaPromQui"));
-        colNotaPromTa.setCellValueFactory(new PropertyValueFactory<>("this.NotaPromTa"));
-        colNotaPro1.setCellValueFactory(new PropertyValueFactory<>("this.NotaPro1"));
-        colNotaPro2.setCellValueFactory(new PropertyValueFactory<>("this.NotaPro2"));
-        colNotaPro3.setCellValueFactory(new PropertyValueFactory<>("this.NotaPro3"));
-        colNotaPromPro.setCellValueFactory(new PropertyValueFactory<>("this.NotaPromPro"));
-        colNotaPromExQuiTa.setCellValueFactory(new PropertyValueFactory<>("this.NotaPromExQuiTa"));
+        colcarne.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("carne"));
+        colNomApe.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("NomApe"));
+        colcorreo.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("correo"));
+        colTelefono.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("Telefono"));
+        colNickName.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("Nickname"));
+        colTipoEst.setCellValueFactory(new PropertyValueFactory<Estudiante,String>("TipoEst"));
+        colNotaPromEx.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromEx"));
+        colNotaPromQui.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromQui"));
+        colNotaPromTa.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromTa"));
+        colNotaPro1.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPro1"));
+        colNotaPro2.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPro2"));
+        colNotaPro3.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPro3"));
+        colNotaPromPro.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromPro"));
+        colNotaPromExQuiTa.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromExQuiTa"));
         tv_E.getItems().setAll(Students);
     }
 

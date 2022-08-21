@@ -6,7 +6,7 @@ public class EstudianteA extends Estudiante{
     calculaprom();
     }
     public void calculaprom (){
-            NotaPromExQuiTa = (NotaPromEx+NotaPromQui+NotaPromTa)/3;
+            setNotaPromExQuiTa((getNotaPromEx()+getNotaPromQui()+getNotaPromTa())/3);
     }
 
 }
