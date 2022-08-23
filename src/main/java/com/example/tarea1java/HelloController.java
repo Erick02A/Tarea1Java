@@ -4,14 +4,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
+//Ejemplo de clase
 public class HelloController implements Initializable {
     @FXML
     private TableColumn<Estudiante, String> colNickName;
@@ -42,8 +41,11 @@ public class HelloController implements Initializable {
     @FXML
     private TableColumn<Estudiante, String> colcorreo;
     @FXML
+    private TableColumn<Estudiante, Double> colNotaFinal;
+    @FXML
     private TableView<Estudiante> tv_E;
     private ObservableList<Estudiante> Students;
+    //Ejemplo de un metodo
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Students = FXCollections.observableArrayList(Listacsv.getEstudiantes());
@@ -61,6 +63,7 @@ public class HelloController implements Initializable {
         colNotaPro3.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPro3"));
         colNotaPromPro.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromPro"));
         colNotaPromExQuiTa.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaPromExQuiTa"));
+        colNotaFinal.setCellValueFactory(new PropertyValueFactory<Estudiante,Double>("NotaFinal"));
         tv_E.getItems().setAll(Students);
     }
 

@@ -1,6 +1,8 @@
 package com.example.tarea1java;
-
+//Esta clase se basa en una abtraccion.
 public abstract class Estudiante {
+    //Estos datos son privados de los objetos tipo estudiante, lo que ejemplifica encapsulacion
+    //Tambien ejemplifican el concepto de atributo
     private final String carne ;
     private final String NomApe;
     private final String correo;
@@ -15,8 +17,9 @@ public abstract class Estudiante {
     private final double NotaPro3;
     private double NotaPromPro;
     private double NotaPromExQuiTa;
+    private double NotaFinal;
 
-    public Estudiante(String carne, String NomApe, String correo, String Telefono, String Nickname, String TipoEst, double NotaPromEx, double NotaPromQui, double NotaPromTa, double NotaPro1, double NotaPro2, double NotaPro3, double NotaPromPro, double NotaPromExQuiTa){
+    public Estudiante(String carne, String NomApe, String correo, String Telefono, String Nickname, String TipoEst, double NotaPromEx, double NotaPromQui, double NotaPromTa, double NotaPro1, double NotaPro2, double NotaPro3, double NotaPromPro, double NotaPromExQuiTa,double NotaFinal){
         this.carne= carne;
         this.NomApe= NomApe;
         this.correo= correo;
@@ -31,6 +34,7 @@ public abstract class Estudiante {
         this.NotaPro3=NotaPro3;
         this.NotaPromPro=NotaPromPro;
         this.NotaPromExQuiTa=NotaPromExQuiTa;
+        this.NotaFinal=NotaFinal;
     }
     public String getCarne() {
         return carne;
@@ -58,6 +62,7 @@ public abstract class Estudiante {
     public double getNotaPro3() {return NotaPro3;}
     public double getNotaPromPro() {return NotaPromPro;}
     public double getNotaPromExQuiTa() {return NotaPromExQuiTa;}
+    public double getNotaFinal(){return NotaFinal;}
 
     public void setNotaPromPro(double notaPromPro) {
         NotaPromPro = notaPromPro;
@@ -65,6 +70,9 @@ public abstract class Estudiante {
 
     public void setNotaPromExQuiTa(double notaPromExQuiTa) {
         NotaPromExQuiTa = notaPromExQuiTa;
+    }
+    public void setNotaFinal(double notaFinal){
+        NotaFinal = notaFinal;
     }
 }
 

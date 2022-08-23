@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-
+//Ejemplo de clase
 public class Listacsv {
     private String nombreCSVLeer;
     private String nombreCSVEscribir;
@@ -13,7 +13,7 @@ public class Listacsv {
     public static ArrayList<Estudiante> getEstudiantes() {
         return estudiantes;
     }
-
+    //Ejemplo de un metodo
     public Listacsv(String nombreCSVLeer, String nombreCSVEscribir, ArrayList<Estudiante> estudiantes) {
         this.nombreCSVLeer = nombreCSVLeer;
         this.nombreCSVEscribir = nombreCSVEscribir;
@@ -24,7 +24,7 @@ public class Listacsv {
             this.estudiantes = estudiantes;
         }
     }
-
+    //Ejemplo de un metodo
     public void leerFichero(){
         FileReader fr;
         try {
@@ -47,11 +47,14 @@ public class Listacsv {
                 String NotaProm3 = datos[11];
                 double NotaPromPro = 0.0;
                 double NotaPromExQuiTa = 0.0;
+                double NotaFinal = 0.0;
                 if (datos[5].equals("A")) {
-                    Estudiante e = new EstudianteA(carne, NomApe, correo, Telefono, Nickname, TipoEst, Double.parseDouble(NotaPromEx), Double.parseDouble(NotaPromQui), Double.parseDouble(NotaPromTa), Double.parseDouble(NotaPro1), Double.parseDouble(NotaPro2), Double.parseDouble(NotaProm3), NotaPromPro, NotaPromExQuiTa);
+                    //Se instancia un objeto tipo estudiante
+                    Estudiante e = new EstudianteA(carne, NomApe, correo, Telefono, Nickname, TipoEst, Double.parseDouble(NotaPromEx), Double.parseDouble(NotaPromQui), Double.parseDouble(NotaPromTa), Double.parseDouble(NotaPro1), Double.parseDouble(NotaPro2), Double.parseDouble(NotaProm3), NotaPromPro, NotaPromExQuiTa,NotaFinal);
                     this.estudiantes.add(e);
                 } else if (datos[5].equals("B")) {
-                    Estudiante e = new EstudianteB(carne, NomApe, correo, Telefono, Nickname, TipoEst, Double.parseDouble(NotaPromEx), Double.parseDouble(NotaPromQui), Double.parseDouble(NotaPromTa), Double.parseDouble(NotaPro1), Double.parseDouble(NotaPro2), Double.parseDouble(NotaProm3), NotaPromPro, NotaPromExQuiTa);
+                    //Se instancia un objeto tipo estudiante
+                    Estudiante e = new EstudianteB(carne, NomApe, correo, Telefono, Nickname, TipoEst, Double.parseDouble(NotaPromEx), Double.parseDouble(NotaPromQui), Double.parseDouble(NotaPromTa), Double.parseDouble(NotaPro1), Double.parseDouble(NotaPro2), Double.parseDouble(NotaProm3), NotaPromPro, NotaPromExQuiTa,NotaFinal);
                     this.estudiantes.add(e);
                 }
             }
